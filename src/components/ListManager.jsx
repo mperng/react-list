@@ -19,15 +19,34 @@ var listManager = React.createClass({
         this.setState({newItemText: e.target.value});
     },
     render: function() {
+        var divStyle = {
+            marginTop: 10
+        };
+
+        var headingStyle = {};
+
+        if (this.props.headingColor) {
+            headingStyle.background = this.props.headingColor;
+        }
         // 'items' parameter passed to List initializes this.props.items in List
         return (
-            <div>
-                <h3>{this.props.title}</h3>
-                <form onSubmit={this.handleSubmit}>
-                    <input onChange={this.onChange} value={this.state.newItemText}/>
-                    <button>Add</button>
-                </form>
-                <List items={this.state.items}/>
+            <div style={divStyle} className="col-sm-4">
+                <div className="panel panel-primary">
+                    <div style={headingStyle} className="panel-heading">
+                        <h3>{this.props.title}</h3>
+                    </div>
+                    <div className="row panel-body">
+                        <form onSubmit={this.handleSubmit}>
+                            <div className="col-sm-9">
+                                <input className="form-control" onChange={this.onChange} value={this.state.newItemText}/>
+                            </div>
+                            <div className="col-sm-2">
+                                <button className="btn btn-primary">Add</button>
+                            </div>
+                        </form>
+                    </div>
+                    <List items={this.state.items}/>
+                </div>
             </div>
         );
     }
