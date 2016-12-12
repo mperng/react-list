@@ -10,7 +10,7 @@
     "type": "git",
     "url": "git+https://github.com/mperng/react-list.git"
   },
-  "author": "",
+  "author": "mperng",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/mperng/react-list/issues"
